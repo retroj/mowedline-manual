@@ -1,0 +1,59 @@
+
+Command Line
+============
+
+The mowedline executable program itself serves as both a client and a
+server.  If you run it and the mowedline daemon is not yet running, it
+will fork and spawn the daemon.
+
+The command line is parsed purely by position.  Command line options may
+have any number of required arguments, but never optional arguments.  For
+this reason, the leading hyphens on the option names are purely
+stylistic.  Mowedline drops any leading hyphens on options, so you can
+give as many as you want or zero.  In other words, `mowedline --help` does
+the exact same thing as `mowedline -help` or `mowedline help`.
+
+
+Special Options
+---------------
+
+ * -help
+
+    Display command-line help.
+
+ * -version
+
+    Display the version of mowedline.
+
+
+Server Options
+--------------
+
+The command line can be used to do limited experimentation with mowedline,
+via the _Server Options_.  However, after a little experimentation, you
+will probably want to go on to writing a .mowedline file with your
+permanent configuration.
+
+
+ * -text-widget <name>
+
+   Make a text-widget with the given name.
+
+
+Client Options
+--------------
+
+These options comprise the main interface to controlling a running
+mowedline daemon.
+
+ * -quit
+
+    Terminate the mowedline daemon.
+
+ * -read <widget>
+
+    Read lines from stdin, and update the given widget with each line.
+
+ * -update <widget> <value>
+
+    Update the given widget with the given value.
