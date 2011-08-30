@@ -1,0 +1,62 @@
+Example Config
+==============
+
+0.2pre
+------
+
+Here is my current config for mowedline 0.2pre.
+
+    ;; -*- scheme -*-
+
+    (define (colorize-xmonad-status text)
+      (list
+       (if (string-prefix? "[" text) "" " ")
+       (let ((m (string-match
+                 '(: (submatch (* any))
+                     (submatch ") ")
+                     (submatch (* any)))
+                 text)))
+         (cond
+          (m (set! m (cdr m)) ;; in chicken 4.7.0, we can (set! (list-ref...)...)
+             (set! (third m) `(color "#666666" ,(third m)))
+             m)
+          (else text)))))
+
+    (define (colorize-clock text)
+      (list
+       " "
+       (let ((m (string-match
+                 '(: (submatch (* any))
+                     (submatch numeric numeric ":" numeric numeric)
+                     (submatch (* any)))
+                 text)))
+         (cond
+          (m (set! (third m) `(color "#bbbbdd" ,(third m)))
+             (cdr m))
+          (else text)))
+       " "))
+
+    (define (string-maybe-pad-left text)
+      (if (string-null? text)
+          text
+          (string-append " " text)))
+
+    (text-widget-font "DejaVu Sans Mono-10:bold")
+    (text-widget-color "#999999")
+    (text-widget-format string-maybe-pad-left)
+
+    (make <window>
+      'widgets
+      (L (make <text-widget>
+           'name "default"
+           'flex 1
+           'format colorize-xmonad-status)
+         (make <text-widget>
+           'name "network")
+         (make <text-widget>
+           'name "email")
+         (make <text-widget>
+           'name "irc"
+           'format (lambda (text) (string-maybe-pad-left (string-trim-both text))))
+         (make <clock>
+           'format colorize-clock)))
