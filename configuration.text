@@ -86,8 +86,8 @@ other widgets.  You won't use it directly in your config.
     The color in which to render the text.  This can be given as a string
     color name, a string hex specifier, a three element (R G B) list or a
     four element list (R G B A).  A string hex specifier is the familiar 6
-    digit hexidecimal notation as used in HTML, #000000 means black and
-    #ffffff means white.  The list forms are slightly more efficient,
+    digit hexidecimal notation as used in HTML, \#000000 means black and
+    \#ffffff means white.  The list forms are slightly more efficient,
     since they don't require the X server to be queried.  The numbers
     given in the list are on a scale of 0 to 1: (0 0 0 1) means black, and
     (1 1 1 1) means white.  The default is white.
