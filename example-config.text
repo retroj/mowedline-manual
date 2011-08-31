@@ -4,11 +4,13 @@ Example Config
 0.2pre
 ------
 
-Here is my current config for mowedline 0.2pre.  Seven widgets in all,
+Here is my current config for mowedline 0.2pre.  Six widgets in all,
 'workspaces', 'wmflags', and 'title' are all updated by my xmonad, via
-three `mowedline -read ...` pipes.  The next three, 'network', 'email',
-and 'irc' are updated by using `mowedline update ...` in various hooks and
-scripts.
+three `mowedline -read ...` pipes.  The next two, 'email' and 'irc', are
+updated by using `mowedline update ...` in my email notification script
+and a hook in my irc client.  Last is a clock, which is updated
+internally.  The clock shows a good example of how to colorize text in
+mowedline.
 
     ;; -*- scheme -*-
 
@@ -53,8 +55,6 @@ scripts.
            'name "title"
            'color "#666666"
            'flex 1)
-         (make <text-widget>
-           'name "network")
          (make <text-widget>
            'name "email")
          (make <text-widget>
