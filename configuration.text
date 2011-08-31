@@ -49,9 +49,9 @@ There is a small selection of built-in widget types that you can use.  We
 expect to write more widget types over time, as we the users invent new
 ideas.
 
-### <widget>
+### \<widget>
 
-The basic <widget> type is something like an abstract base class for all
+The basic \<widget> type is something like an abstract base class for all
 other widgets.  You won't use it directly in your config.
 
  * background-color
@@ -79,7 +79,7 @@ other widgets.  You won't use it directly in your config.
     Every widget must have a unique name.
 
 
-### <text-widget>
+### \<text-widget>
 
  * color
 
@@ -120,7 +120,7 @@ other widgets.  You won't use it directly in your config.
     processing by a format function.
 
 
-### <clock>
+### \<clock>
 
 Inherits from <text-widget>.  All <text-widget> properties can be used
 with a clock.
