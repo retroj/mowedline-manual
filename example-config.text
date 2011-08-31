@@ -4,7 +4,11 @@ Example Config
 0.2pre
 ------
 
-Here is my current config for mowedline 0.2pre.
+Here is my current config for mowedline 0.2pre.  Seven widgets in all,
+'workspaces', 'wmflags', and 'title' are all updated by my xmonad, via
+three `mowedline -read ...` pipes.  The next three, 'network', 'email',
+and 'irc' are updated by using `mowedline update ...` in various hooks and
+scripts.
 
     ;; -*- scheme -*-
 
