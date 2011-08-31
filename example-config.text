@@ -33,13 +33,13 @@ mowedline.
                      (submatch (* any)))
                  text)))
          (cond
-          (m (set! (third m) `(color "#bbbbdd" ,(third m)))
+          (m (set! (third m) `(color (.73 .73 .86 1) ,(third m)))
              (cdr m))
           (else text)))
        " "))
 
     (text-widget-font "DejaVu Sans Mono-10:bold")
-    (text-widget-color "#999999")
+    (text-widget-color '(.6 .6 .6 1))
     (text-widget-format string-maybe-pad-left)
 
     (make <window>
@@ -49,11 +49,11 @@ mowedline.
            'format workspaces-maybe-pad-left)
          (make <text-widget>
            'name "wmflags"
-           'color "#888888"
+           'color '(.53 .53 .53 1)
            'format (lambda (text) (string-append " (" text ")")))
          (make <text-widget>
            'name "title"
-           'color "#666666"
+           'color '(.4 .4 .4 1)
            'flex 1)
          (make <text-widget>
            'name "email")
