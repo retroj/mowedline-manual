@@ -8,19 +8,15 @@ Here is my current config for mowedline 0.2pre.
 
     ;; -*- scheme -*-
 
-    (define (colorize-xmonad-status text)
-      (list
-       (if (string-prefix? "[" text) "" " ")
-       (let ((m (string-match
-                 '(: (submatch (* any))
-                     (submatch ") ")
-                     (submatch (* any)))
-                 text)))
-         (cond
-          (m (set! m (cdr m)) ;; in chicken 4.7.0, we can (set! (list-ref...)...)
-             (set! (third m) `(color "#666666" ,(third m)))
-             m)
-          (else text)))))
+    (define (string-maybe-pad-left text)
+      (if (string-null? text)
+          text
+          (string-append " " text)))
+
+    (define (workspaces-maybe-pad-left text)
+      (string-append
+       (if (string-prefix? "[" text) " " "  ")
+       text))
 
     (define (colorize-clock text)
       (list
@@ -36,11 +32,6 @@ Here is my current config for mowedline 0.2pre.
           (else text)))
        " "))
 
-    (define (string-maybe-pad-left text)
-      (if (string-null? text)
-          text
-          (string-append " " text)))
-
     (text-widget-font "DejaVu Sans Mono-10:bold")
     (text-widget-color "#999999")
     (text-widget-format string-maybe-pad-left)
@@ -48,9 +39,16 @@ Here is my current config for mowedline 0.2pre.
     (make <window>
       'widgets
       (L (make <text-widget>
-           'name "default"
-           'flex 1
-           'format colorize-xmonad-status)
+           'name "workspaces"
+           'format workspaces-maybe-pad-left)
+         (make <text-widget>
+           'name "wmflags"
+           'color "#888888"
+           'format (lambda (text) (string-append " (" text ")")))
+         (make <text-widget>
+           'name "title"
+           'color "#666666"
+           'flex 1)
          (make <text-widget>
            'name "network")
          (make <text-widget>
