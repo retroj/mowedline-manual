@@ -130,3 +130,30 @@ with a clock.
  * time-format
 
     A string giving the time->string format for the clock.
+
+
+Setting Defaults
+----------------
+
+The default values of many of the properties listed above can be changed
+by a group of parameter procedures.  The following procedures are
+available for configuring defaults.
+
+ * widget-background-color
+ * text-widget-font
+ * text-widget-color
+ * text-widget-format
+
+Use these procedures in your .mowedline _before_ instantiating the
+widgets which are to be affected.
+
+
+### Examples
+
+Change the default font for all text-widgets:
+
+    (text-widget-font "DejaVu Sans Mono-10:bold")
+
+Change the default text color of all text-widgets:
+
+    (text-widget-color "#999999")
