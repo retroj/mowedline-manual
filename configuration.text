@@ -1,0 +1,130 @@
+
+Configuration
+=============
+
+Mowedline is configured by creating either a `~/.mowedline` or
+`~/.config/mowedline/init.scm` file.  The documentation will sometimes
+refer to this file as your ".mowedline", and when it does, it refers to
+either one.
+
+Instead of using a static configuration format, and being constrained by
+the implicit limitations thereof, a mowedline configuration is written in
+scheme (Chicken Scheme to be precise).  Your .mowedline is a scheme
+program, allowing you to leverage the full power of the scheme programming
+language to configure, enhance, and extend mowedline in novel and creative
+ways.
+
+The .mowedline file is loaded by the mowedline daemon at startup.  Its
+primary responsibility is to create windows and populate them with
+widgets.  In point of fact, if your .mowedline does not create a window, a
+default window with one widget will be created.  Let's get right into an
+example.
+
+    (make <window>
+          'widgets
+          (L (make <text-widget>
+                   'name "default"
+                   'flex 1)))
+
+Windows and widgets are represented in mowedline as
+[coops](http://wiki.call-cc.org/eggref/4/coops/) objects.  They are
+instantiated with the `make` procedure.  The first argument of make is a
+coops class; in the example above we see two classes, `<window>` and
+`<text-widget>`.  After the class come a sequence of pairs that give the
+properties of the object.  The window has just one property, `widgets`,
+while the text-widget has two, `name` and `flex`.
+
+`L` is an alias for `list`.
+
+Every text-widget must have a unique name.  The name is how widgets are
+referred to in the command-line interface.
+
+The `flex` property is explained below.
+
+
+Widget Types
+------------
+
+There is a small selection of built-in widget types that you can use.  We
+expect to write more widget types over time, as we the users invent new
+ideas.
+
+### <widget>
+
+The basic <widget> type is something like an abstract base class for all
+other widgets.  You won't use it directly in your config.
+
+ * background-color
+
+    The background color of the widget.  See the explaination under
+    'color' below for the allowed values of this property.  The default is
+    black.
+
+ * flex
+
+    The `flex` property makes a widget's width rubber.  When a window is
+    drawn on screen, the available width is divvied up among the widgets.
+    Normally, each widget is allocated exactly enough space to fit its
+    contents.  A widget with flex, however, is allocated a portion of the
+    _leftover_ space, after allocating space for all other widgets.  The
+    flex values of all widgets are added up, and the remaining space is
+    divided among them in proportion to each widget's flex value.  In our
+    example, we have one widget with a flex value of 1.  The total flex is
+    1, and our widget receives 1/1th of the space, or 100%.  If we add
+    another widget and give it flex 2, that makes a total flex of 3, our
+    first widget get's 1/3, and the new widget gets 2/3.
+
+ * name
+
+    Every widget must have a unique name.
+
+
+### <text-widget>
+
+ * color
+
+    The color in which to render the text.  This can be given as a string
+    color name, a string hex specifier, a three element (R G B) list or a
+    four element list (R G B A).  A string hex specifier is the familiar 6
+    digit hexidecimal notation as used in HTML, #000000 means black and
+    #ffffff means white.  The list forms are slightly more efficient,
+    since they don't require the X server to be queried.  The numbers
+    given in the list are on a scale of 0 to 1: (0 0 0 1) means black, and
+    (1 1 1 1) means white.  The default is white.
+
+ * font
+
+    An Xft-style font name.  Use the program `fc-list` to see what fonts
+    are installed on your computer.  Specify size by appending a hyphen
+    followed by a number.  Specify other attributes by appending a colon
+    and an attribute specifier.  See section 1.1
+    [here](http://keithp.com/~keithp/render/Xft.tutorial) for more
+    information on how to format font names.  Mowedline's default font is
+    "mono-10:bold".
+
+ * format
+
+    A procedure of one argument that receives the raw text and which can
+    return either a string or a list-structured markup definition.  Markup
+    definitions can be used to colorize text with multiple colors.  It
+    looks like this:
+
+        '("a" (color "red" "b") "c")
+
+    That results in the string "abc" with a red "b".
+
+ * text
+
+    The text to display in the widget.  This is the value that gets set
+    when you run `mowedline -update awidget 'some text'`, after possible
+    processing by a format function.
+
+
+### <clock>
+
+Inherits from <text-widget>.  All <text-widget> properties can be used
+with a clock.
+
+ * time-format
+
+    A string giving the time->string format for the clock.
