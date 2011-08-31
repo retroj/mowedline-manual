@@ -35,7 +35,7 @@ will probably want to go on to writing a .mowedline file with your
 permanent configuration.
 
 
- * -text-widget <name>
+ * -text-widget \<name>
 
    Make a text-widget with the given name.
 
@@ -50,10 +50,10 @@ mowedline daemon.
 
     Terminate the mowedline daemon.
 
- * -read <widget>
+ * -read \<widget>
 
     Read lines from stdin, and update the given widget with each line.
 
- * -update <widget> <value>
+ * -update \<widget> \<value>
 
     Update the given widget with the given value.
