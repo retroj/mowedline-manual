@@ -2,6 +2,8 @@
 Configuration
 =============
 
+This document pertains to mowedline 0.2pre.
+
 Mowedline is configured by creating either a `~/.mowedline` or
 `~/.config/mowedline/init.scm` file.  The documentation will sometimes
 refer to this file as your ".mowedline", and when it does, it refers to
