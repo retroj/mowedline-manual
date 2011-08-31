@@ -60,14 +60,6 @@ __March 24, 2011:__ _Mowedline 0.1_ The program now has the minimum
 feature set to be considered useful, though much work remains to be done.
 
 
-Examples
---------
-
-Update the default widget with each line read from stdin, then quit.
-
-    mowedline -read default -quit
-
-
 License
 -------
 
