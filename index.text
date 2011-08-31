@@ -38,12 +38,18 @@ them with git, enter the directory of each one and do a test build with
 `chicken-install -n`.  Once you know they build successfully, install them
 with `chicken-install -s`.
 
+The current development version of mowedline is 0.2pre, and may be found
+in the branch `0.2pre` of the mowedline git repository.
+
 To build mowedline itself, enter its directory and do `csc mowedline.scm`.
 If chicken reports a missing dependency, install it with chicken-install.
 
 
 Project Status
 --------------
+
+__August 30, 2011:__ Xft, unicode, color, and more, all supported in
+mowedline 0.2pre.
 
 __August 26, 2011:__ Progress on writing Xft bindings for Chicken Scheme.
 They're not polished enough to release yet, but this will allow me to
