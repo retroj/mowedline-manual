@@ -36,9 +36,9 @@ coops class; in the example above we see two classes, `<window>` and
 properties of the object.  The window has just one property, `widgets`,
 while the text-widget has two, `name` and `flex`.
 
-`L` is an alias for `list`.
+`L` is an alias for `list`, provided by mowedline.
 
-Every text-widget must have a unique name.  The name is how widgets are
+Every widget must have a unique name.  The name is how widgets are
 referred to in the command-line interface.
 
 The `flex` property is explained below.
