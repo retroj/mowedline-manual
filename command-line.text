@@ -35,9 +35,17 @@ will probably want to go on to writing a .mowedline file with your
 permanent configuration.
 
 
+ * -q
+
+   Bypass startup file (.mowedline)
+
  * -text-widget \<name>
 
    Make a text-widget with the given name.
+
+ * -clock
+
+   Make a clock widget.
 
 
 Client Options
