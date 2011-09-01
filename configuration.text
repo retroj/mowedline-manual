@@ -117,14 +117,14 @@ other widgets.  You won't use it directly in your config.
     strings and markup elements.  Markup elements may take positional
     arguments.  The following elements are available:
 
-     * color \<color>
+     * (color \<color> ...)
 
         The argument is a color specification.  Text inside the color
         element will be colored with that color.
 
             '("a" (color "red" "b") "c")
 
-     * button \<thunk>
+     * (button \<thunk> ...)
 
         Thunk is a procedure of no arguments that will be called when the
         text inside the button is clicked.  In the following example,
