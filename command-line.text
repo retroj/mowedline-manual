@@ -47,6 +47,23 @@ permanent configuration.
 
    Make a clock widget.
 
+ * -bg \<color>
+
+   Set the background color for succeeding widgets.
+
+ * -fg \<color>
+
+   Set the foreground color for succeeding widgets.
+
+ * -flex \<value>
+
+   Set the flex value for succeeding widgets.
+
+ * -position \<value>
+
+   Set the window position for succeeding windows.  Allowed values are
+   `top` and `bottom`.
+
 
 Client Options
 --------------
