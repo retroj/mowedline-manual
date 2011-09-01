@@ -122,7 +122,7 @@ other widgets.  You won't use it directly in your config.
         The argument is a color specification.  Text inside the color
         element will be colored with that color.
 
-            '("a" (color "red" "b") "c")
+           '("a" (color "red" "b") "c")
 
      * (button \<thunk> ...)
 
@@ -130,10 +130,10 @@ other widgets.  You won't use it directly in your config.
         text inside the button is clicked.  In the following example,
         clicking on the "b" sends an update to the widget, "foo".
 
-            '("a"
-              (button (lambda () (update "foo" "bar"))
-                      "b")
-              "c")
+           '("a"
+             (button (lambda () (update "foo" "bar"))
+                     "b")
+             "c")
 
 
  * text
@@ -171,8 +171,8 @@ separated by spaces.
     An alist giving the associations between flag names and display forms.
     For example:
 
-        '(("foo" . (color "red" "f"))
-          ("bar" . (color "blue" "b")))
+       '(("foo" . (color "red" "f"))
+         ("bar" . (color "blue" "b")))
 
 Note: the `text` property of a flags widget will _always_ be a markup
 structure, never a string, so format procedures should be adjusted
