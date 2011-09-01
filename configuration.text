@@ -112,12 +112,29 @@ other widgets.  You won't use it directly in your config.
 
     A procedure of one argument that receives the raw text and which can
     return either a string or a list-structured markup definition.  Markup
-    definitions can be used to colorize text with multiple colors.  It
-    looks like this:
+    definitions can be used to colorize and buttonize text.  The markup
+    language is very simple.  It is just a nested list that contains
+    strings and markup elements.  Markup elements may take positional
+    arguments.  The following elements are available:
 
-        '("a" (color "red" "b") "c")
+     * color \<color>
 
-    That results in the string "abc" with a red "b".
+        The argument is a color specification.  Text inside the color
+        element will be colored with that color.
+
+            '("a" (color "red" "b") "c")
+
+     * button \<thunk>
+
+        Thunk is a procedure of no arguments that will be called when the
+        text inside the button is clicked.  In the following example,
+        clicking on the "b" sends an update to the widget, "foo".
+
+            '("a"
+              (button (lambda () (update "foo" "bar"))
+                      "b")
+              "c")
+
 
  * text
 
