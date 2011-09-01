@@ -19,10 +19,27 @@ mowedline.
           text
           (string-append " " text)))
 
-    (define (workspaces-maybe-pad-left text)
-      (string-append
-       (if (string-prefix? "[" text) " " "  ")
-       text))
+    (define (buttonize-workspaces text)
+      (cons
+       (if (string-prefix? "[" text) "" " ")
+       (fold
+        (lambda (token markup)
+          (cons
+           " "
+           (cons
+            (cond
+             ((string-prefix? "[" token) ;; current workspace
+              token)
+             ((string-prefix? "!" token) ;; urgency notification
+              (let ((ws (string-drop token 1)))
+                `(button (lambda () (switch-to-desktop ,ws))
+                         (color (1 0 0 1) ,ws))))
+             (else
+              `(button (lambda () (switch-to-desktop ,token))
+                       ,token)))
+            markup)))
+        '()
+        (reverse (string-tokenize text)))))
 
     (define (colorize-clock text)
       (list
@@ -46,11 +63,15 @@ mowedline.
       'widgets
       (L (make <text-widget>
            'name "workspaces"
-           'format workspaces-maybe-pad-left)
-         (make <text-widget>
+           'format buttonize-workspaces)
+         (make <flags>
            'name "wmflags"
            'color '(.53 .53 .53 1)
-           'format (lambda (text) (string-append " (" text ")")))
+           'flags '(("tabbed" . (color "paleturquoise3" "T"))
+                    ("float" . (color "firebrick3" "f"))
+                    ("inverse" . (color "cornflowerblue" "v"))
+                    ("magnifier" . (color "forestgreen" "m")))
+           'format (lambda (markup) (append '(" (") markup '(")"))))
          (make <text-widget>
            'name "title"
            'color '(.4 .4 .4 1)
