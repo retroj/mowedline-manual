@@ -26,26 +26,43 @@ Special Options
     Display the version of mowedline.
 
 
+Client Options
+--------------
+
+These options comprise the main interface to controlling a running
+mowedline daemon.
+
+ * -quit
+
+    Terminate the mowedline daemon.
+
+ * -read \<widget>
+
+    Read lines from stdin, and update the given widget with each line.
+
+ * -update \<widget> \<value>
+
+    Update the given widget with the given value.
+
+
 Server Options
 --------------
 
 The command line can be used to do limited experimentation with mowedline,
 via the _Server Options_.  However, after a little experimentation, you
 will probably want to go on to writing a .mowedline file with your
-permanent configuration.
+permanent configuration.  Server options are evaluated at server startup,
+just before loading the .mowedline.
 
 
  * -q
 
-   Bypass startup file (.mowedline)
+   Bypass startup file (.mowedline).
 
- * -text-widget \<name>
+### Setting Defaults
 
-   Make a text-widget with the given name.
-
- * -clock
-
-   Make a clock widget.
+These options set defaults.  They apply to all following widgets (or
+windows) created on the command line, and in your .mowedline.
 
  * -bg \<color>
 
@@ -65,20 +82,31 @@ permanent configuration.
    `top` and `bottom`.
 
 
-Client Options
---------------
+### Widgets and Windows
 
-These options comprise the main interface to controlling a running
-mowedline daemon.
+These options create widgets and windows.  If widget options are given,
+but no window is explicitly created, one will be created automatically.
+If no windows have been created by the time the .mowedline is finished
+loading, a default window with one text-widget, named "default", will be
+automatically created.
 
- * -quit
+ * -text-widget \<name>
 
-    Terminate the mowedline daemon.
+   Make a text-widget with the given name.
 
- * -read \<widget>
+ * -clock
 
-    Read lines from stdin, and update the given widget with each line.
+   Make a clock widget.
 
- * -update \<widget> \<value>
+ * -window
 
-    Update the given widget with the given value.
+   Create a window containing the foregoing widgets.
+
+   This may seem counterintuitive at first.  The -window option comes
+   _after_ any widget options on the command line.  This is because the
+   window height is based on widget height, as well as other details of
+   widget initialization.  It's like programming in Forth!
+
+   Also note, if you're just making one window, you don't need to supply
+   this option, as the default window will be created with either the
+   widgets you specified or a single default widget.
