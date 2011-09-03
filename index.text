@@ -27,9 +27,8 @@ Obtaining Mowedline
 
 The source code can be obtained from [my git repository](/git/mowedline/).
 
-Additionally, if you want to run mowedline 0.2pre (and you do!), you need
-to download and install two eggs which are not yet available via
-chicken-install.
+You will need to download and install two eggs which are not yet available
+via chicken-install:
 
  * [xtypes](/git/xtypes-egg/)
  * [xft](/git/xft-egg/)
@@ -38,9 +37,6 @@ Install xtypes first, as it is a dependency of the xft egg.  After cloning
 them with git, enter the directory of each one and do a test build with
 `chicken-install -n`.  Once you know they build successfully, install them
 with `chicken-install -s`.
-
-The current development version of mowedline is 0.2pre, and may be found
-in the branch `0.2pre` of the mowedline git repository.
 
 To build mowedline itself, enter its directory and do `csc mowedline.scm`.
 If chicken reports a missing dependency, install it with chicken-install.
