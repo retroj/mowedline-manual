@@ -11,9 +11,19 @@ Install chicken.
 Install the development headers for X11, XRender, and Xft.  On Debian, the
 packages are libx11-dev, libxrender-dev, and libxft-dev.
 
-Install chicken packages that are depended upon by mowedline.
+Install chicken packages that are depended upon by mowedline.  Some of
+these might already be installed.  You can check with `chicken-status`.
 
- * xlib
+ * `chicken-install coops`
+ * `chicken-install data-structures`
+ * `chicken-install dbus`
+ * `chicken-install environments`
+ * `chicken-install filepath`
+ * `chicken-install list-utils`
+ * `chicken-install lolevel`
+ * `chicken-install miscmacros`
+ * `chicken-install posix`
+ * `chicken-install xlib`
 
 Install xtypes-egg.
 
