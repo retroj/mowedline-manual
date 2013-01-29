@@ -3,8 +3,8 @@ Mowedline Installation
 ======================
 
 The installation procedure for mowedline is as yet a bit complicated,
-mainly because of two chicken egg dependencies that I have not yet
-finished packaging for availability through chicken-install.
+mainly because of one chicken egg dependency that I have not yet finished
+packaging for availability through chicken-install.
 
 Install chicken.
 
@@ -24,17 +24,7 @@ these might already be installed.  You can check with `chicken-status`.
  * `chicken-install miscmacros`
  * `chicken-install posix`
  * `chicken-install xlib`
-
-Install xtypes-egg.
-
- * change directory to where you keep source code, e.g. `cd ~/src`
- * `git clone http://retroj.net/git/xtypes-egg/.git/`
- * `cd xtypes-egg`
- * `chicken-install -n`
- * if there were no errors, proceed with install of xtypes-egg:
- * `chicken-install -s` (The -s flag means to use `sudo` to copy files to
-   system locations.  If you cannot use sudo, refer to the documentation
-   for chicken-install for other methods.)
+ * `chicken-install xtypes`
 
 Install xft-egg
 
@@ -47,11 +37,12 @@ Install xft-egg
    system locations.  If you cannot use sudo, refer to the documentation
    for chicken-install for other methods.)
 
-Clone mowedline
+Install mowedline
 
  * change directory to where you keep source code, e.g. `cd ~/src`
  * `git clone http://retroj.net/git/mowedline/.git/`
  * `cd mowedline`
  * `csc mowedline.scm`
- * you now have a mowedline binary that you can symlink into a $PATH
-   directory (like ~/bin/ or /usr/local/bin).
+ * `csc mowedline-client.scm`
+ * you now have mowedline and mowedline-client binaries that you can
+   symlink into a $PATH directory (like ~/bin/ or /usr/local/bin).
