@@ -11,10 +11,6 @@ of those windows.  A mowedline window is divided into widgets.  Each
 widget has a unique name, by which the client can refer to it to update
 its contents.
 
-Both daemon and client roles are performed by a single program.  When you
-run mowedline, it checks if the daemon is running, and if not, forks,
-starting the daemon in the child process.
-
 The runtime configuration is written in scheme.  It can either be
 `~/.mowedline` or `~/.config/mowedline/init.scm`.  This file is loaded
 when the daemon starts, and sets variables that affect global settings or
@@ -27,23 +23,31 @@ Obtaining Mowedline
 
 The source code can be obtained from [my git repository](/git/mowedline/).
 
-You will need to download and install two eggs which are not yet available
-via chicken-install:
+You will also need to download and install one egg which is not yet
+available via chicken-install:
 
- * [xtypes](/git/xtypes-egg/)
  * [xft](/git/xft-egg/)
 
-Install xtypes first, as it is a dependency of the xft egg.  After cloning
-them with git, enter the directory of each one and do a test build with
-`chicken-install -n`.  Once you know they build successfully, install them
-with `chicken-install -s`.
+After cloning the xft-egg repository with git, enter the directory and do
+a test build with `chicken-install -n`.  It may tell you that you need to
+install other eggs first, like the xtypes egg.  For each, do for example:
+`chicken-install xtypes`.  You will also need to have Xft development
+headers installed on your system.  On Debian, the package for these is
+called libxft-dev.  Once the egg builds successfully, install it with
+`chicken-install -s`.
 
-To build mowedline itself, enter its directory and do `csc mowedline.scm`.
-If chicken reports a missing dependency, install it with chicken-install.
+To build mowedline itself, enter its directory and do `csc mowedline.scm`,
+then `csc mowedline-client.scm`.  If chicken reports a missing dependency,
+install it with chicken-install.
 
 
 Project Status
 --------------
+
+__January 29, 2013:__ Verion 0.2pre1 --- mowedline has been split into two
+programs, mowedline and mowedline-client, to address the problem of
+simultaneous multiple server starting,
+[discussed here](/blog/2013/01/28/mowedline-three-bugs).
 
 __August 30, 2011:__ Xft, unicode, color, and more, all supported in
 mowedline 0.2pre.
