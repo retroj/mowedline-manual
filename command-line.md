@@ -2,9 +2,12 @@
 Command Line
 ============
 
-The mowedline executable program itself serves as both a client and a
-server.  If you run it and the mowedline daemon is not yet running, it
-will fork and spawn the daemon.
+These instructions cover Mowedline 0.2pre1.
+
+Mowedline consists of two programs, called `mowedline` and
+`mowedline-client`.  The `mowedline` program is the server; it creates and
+manages the mowedline window.  The `mowedline-client` program is used to
+send commands to the server to update widgets.
 
 The command line is parsed purely by position.  Command line options may
 have any number of required arguments, but never optional arguments.  For
@@ -16,6 +19,8 @@ the exact same thing as `mowedline -help` or `mowedline help`.
 
 Special Options
 ---------------
+
+These options are available in both server and client.
 
  * -help
 
@@ -29,12 +34,12 @@ Special Options
 Client Options
 --------------
 
-These options comprise the main interface to controlling a running
-mowedline daemon.
+These options are available in `mowedline-client` and comprise the main
+interface to controlling a running mowedline server.
 
  * -quit
 
-    Terminate the mowedline daemon.
+    Terminate the mowedline server.
 
  * -read \<widget>
 
@@ -47,6 +52,8 @@ mowedline daemon.
 
 Server Options
 --------------
+
+These options are available in the `mowedline` server program.
 
 The command line can be used to do limited experimentation with mowedline,
 via the _Server Options_.  However, after a little experimentation, you
