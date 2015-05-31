@@ -9,18 +9,17 @@ Mowedline is configured by creating either a `~/.mowedline` or
 refer to this file as your ".mowedline", and when it does, it refers to
 either one.
 
-Instead of using a static configuration format, and being constrained by
+Instead of using a static configuration format and being constrained by
 the implicit limitations thereof, a mowedline configuration is written in
-scheme (Chicken Scheme to be precise).  Your .mowedline is a scheme
+scheme (CHICKEN Scheme to be precise).  Your .mowedline is a scheme
 program, allowing you to leverage the full power of the scheme programming
 language to configure, enhance, and extend mowedline in novel and creative
 ways.
 
 The .mowedline file is loaded by the mowedline daemon at startup.  Its
 primary responsibility is to create windows and populate them with
-widgets.  In point of fact, if your .mowedline does not create a window, a
-default window with one widget will be created.  Let's get right into an
-example.
+widgets.  If your .mowedline does not create a window, a default window
+with one widget will be created.  Let's get right into an example.
 
     (make <window>
           'widgets
