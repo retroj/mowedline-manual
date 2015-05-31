@@ -185,8 +185,8 @@ Window Properties
 
  * height
 
-   Explicit value for mowedline height in pixels.  If not given, it will
-   default to the height of the tallest widget.
+    Explicit value for mowedline height in pixels.  If not given, it will
+    default to the height of the tallest widget.
 
  * position
 
