@@ -2,6 +2,14 @@
 Screenshots
 ===========
 
+0.2.7
+-----
+
+ * [20150531-mowedline-font-markup.png](/screenshots/20150531-mowedline-font-markup.png)
+
+    This one shows some color and font usage in markup, and below, the
+    format procedure used for the clock.
+
 0.2pre
 ------
 
