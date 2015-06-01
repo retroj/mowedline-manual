@@ -33,7 +33,7 @@ interacting with mowedline.  It takes two arguments: a widget name and
 text to write to the widget.  Some widget types take specially formatted
 text to work their magic.
 
-Integrating mowedline with other software in the general case, involves
+Integrating mowedline with other software in the general case involves
 nothing more complicated than arranging for that software to call
 mowedline-client, dbus-send, or any other method of performing a DBus
 method call that the software may provide.
