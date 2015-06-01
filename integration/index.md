@@ -8,7 +8,7 @@ small DBus client that provides a nice [command-line
 syntax](/mowedline/command-line) for communicating with the mowedline
 server.  You can in fact use any general DBus client to update mowedline
 and different ones may be better suited than others for integration with
-other software.
+particular software.
 
 You can for example update mowedline with the `dbus-send` utility that
 comes with DBus:
