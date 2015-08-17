@@ -53,16 +53,17 @@ There is a small selection of built-in widget types that you can use.  We
 expect to write more widget types over time, as we the users invent new
 ideas.
 
-### \<widget>
+### Common properties
 
-The basic \<widget> type is something like an abstract base class for all
-other widgets.  You won't use it directly in your config.
+These options can be used on any type of widget that appears in your
+configuration.
 
  * background-color
 
     The background color of the widget.  See the explaination under
-    'color' below for the allowed values of this property.  The default is
-    black.
+    'color' below for the allowed values of this property.  The
+    default is #f, meaning it should use the window's background
+    color.
 
  * flex
 
