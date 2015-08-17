@@ -21,7 +21,8 @@ there is no config script) then the default window is created.
 Obtaining Mowedline
 -------------------
 
-The source code can be obtained from [my git repository](/git/mowedline/).
+The source code can be obtained from
+[my git repository](https://github.com/retroj/mowedline/).
 
 You will also need to download and install one egg which is not yet
 available via chicken-install:
