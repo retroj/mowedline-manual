@@ -66,6 +66,12 @@ just before loading the .mowedline.
 
    Bypass startup file (.mowedline).
 
+ * -config <file>
+
+   Use the specified configuration file instead of the default one.
+   When this option isn't specified either `~/.mowedline` or
+   `~/.config/mowedline/init.scm` is used.
+
 ### Setting Defaults
 
 These options set defaults.  They apply to all following widgets (or
