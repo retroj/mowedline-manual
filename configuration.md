@@ -23,11 +23,10 @@ primary responsibility is to create windows and populate them with
 widgets.  If your .mowedline does not create a window, a default window
 with one widget will be created.  Let's get right into an example.
 
-    (make <window>
-          'widgets
-          (L (make <text-widget>
-                   'name "default"
-                   'flex 1)))
+    (window
+     (widgets:text
+      'name "default"
+      'flex 1)))
 
 Windows and widgets are represented in mowedline as
 [coops](http://wiki.call-cc.org/eggref/4/coops/) objects.  They are
