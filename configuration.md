@@ -235,6 +235,7 @@ available for configuring defaults.
  * widget-background-color
  * widget-flex
  * window-position
+ * window-background
 
 Use these procedures in your .mowedline _before_ instantiating the
 widgets which are to be affected.
