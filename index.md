@@ -27,6 +27,17 @@ The source code can be obtained from
 report any issues or feature requests you might have in the
 [issue tracker](https://github.com/retroj/mowedline/issues).
 
+Installing Mowedline
+--------------------
+
+To install Mowedline you should use `chicken-install mowedline` as
+root.
+
+If you want to build from source you should first install all the
+dependencies with chicken-install. The dependencies can be found in
+`mowedline.meta`. When that is done go into the mowedline project
+directory and run `chicken-install` as root.
+
 Project Status
 --------------
 
