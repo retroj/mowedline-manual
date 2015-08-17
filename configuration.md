@@ -204,6 +204,24 @@ Window Properties
     Window width in pixels.  If not given, defaults to the width of the
     display.
 
+ * margin-bottom, margin-left, margin-right, margin-top
+
+    How far, in pixels, from the bottom, left, right or top edge of
+    the screen the window should be placed. If not given, all default
+    to 0.
+
+ * background
+
+    The background color of the window. Can be either of the values
+    `inherit`, `transparent` or #f. The value `inherit` makes the
+    background transparent for displays without a compositor by
+    copying the root window's background. The value `transparent`
+    makes the background transparent for displays _with_ a compositor.
+
+    Note: If you use `inherit` with a compositor, repaint doesn't work
+    right. If you use `transparent` without a compositor, you'll just
+    get a black background.
+
 Setting Defaults
 ----------------
 
