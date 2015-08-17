@@ -84,7 +84,7 @@ configuration.
     Every widget must have a unique name.
 
 
-### \<text-widget>
+### widgets:text
 
  * color
 
