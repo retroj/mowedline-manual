@@ -3,7 +3,7 @@ Mowedline
 
 Mowedline is a status bar program for X, written in [Chicken
 Scheme](http://www.call-cc.org/) with XLib, Xft, and DBus.  It was
-inspired by [dzen2](http://sites.google.com/site/gotmor/dzen), and like
+inspired by [dzen2](https://github.com/robm/dzen), and like
 that program, aims at an unobtrusive, minimalist look.  It is based on a
 client/daemon design, where the daemon maintains one or more windows, and
 the client sends commands to the daemon over DBus to update the contents
