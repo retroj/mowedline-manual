@@ -5,9 +5,11 @@ Configuration
 This document pertains to mowedline 0.2pre1.
 
 Mowedline is configured by creating either a `~/.mowedline` or
-`~/.config/mowedline/init.scm` file.  The documentation will sometimes
-refer to this file as your ".mowedline", and when it does, it refers to
-either one.
+`~/.config/mowedline/init.scm` file, or passing a file along with the
+`-config` command. The documentation will sometimes refer to this file
+as your ".mowedline", and when it does, it refers to either one. Some
+configuration can also be done by passing commands to the `mowedline`
+program.
 
 Instead of using a static configuration format and being constrained by
 the implicit limitations thereof, a mowedline configuration is written in
