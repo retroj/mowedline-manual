@@ -134,6 +134,13 @@ configuration.
                      "b")
              "c")
 
+     * (font \<font> ...)
+
+        The argument is a font specification.  Text inside the font
+        element will be rendered in that font.
+
+           '("a" (font "Coffee Script-12" "b") "c")
+
 
  * text
 
