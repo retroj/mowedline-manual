@@ -158,12 +158,13 @@ All widgets:text properties can be used with a clock.
     A string giving the time->string format for the clock.
 
 
-### \<flags>
+### widgets:flags
 
-The flags widget is derived from text-widget, and serves the purpose of
-displaying a set of flags.  The flags are pre-defined via the 'flags slot
-and upon update, input is parsed and interpreted to turn on, turn off, or
-clear and replace the set of currently displayed flags.
+The flags widget is derived from the text widget, and serves the
+purpose of displaying a set of flags.  The flags are pre-defined via
+the 'flags slot and upon update, input is parsed and interpreted to
+turn on, turn off, or clear and replace the set of currently displayed
+flags.
 
 Input is parsed as follows.  If the input begins with '+', then the
 following flagnames are turned on.  If the input begins with '-', then the
