@@ -25,24 +25,6 @@ Obtaining Mowedline
 The source code can be obtained from
 [my git repository](https://github.com/retroj/mowedline/).
 
-You will also need to download and install one egg which is not yet
-available via chicken-install:
-
- * [xft](/git/xft-egg/)
-
-After cloning the xft-egg repository with git, enter the directory and do
-a test build with `chicken-install -n`.  It may tell you that you need to
-install other eggs first, like the xtypes egg.  For each, do for example:
-`chicken-install xtypes`.  You will also need to have Xft development
-headers installed on your system.  On Debian, the package for these is
-called libxft-dev.  Once the egg builds successfully, install it with
-`chicken-install -s`.
-
-To build mowedline itself, enter its directory and do `csc mowedline.scm`,
-then `csc mowedline-client.scm`.  If chicken reports a missing dependency,
-install it with chicken-install.
-
-
 Project Status
 --------------
 
