@@ -23,7 +23,9 @@ Obtaining Mowedline
 -------------------
 
 The source code can be obtained from
-[my git repository](https://github.com/retroj/mowedline/).
+[my git repository](https://github.com/retroj/mowedline/). Please
+report any issues or feature requests you might have in the
+[issue tracker](https://github.com/retroj/mowedline/issues).
 
 Project Status
 --------------
