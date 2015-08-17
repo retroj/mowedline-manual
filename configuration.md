@@ -28,15 +28,11 @@ with one widget will be created.  Let's get right into an example.
       'name "default"
       'flex 1)))
 
-Windows and widgets are represented in mowedline as
-[coops](http://wiki.call-cc.org/eggref/4/coops/) objects.  They are
-instantiated with the `make` procedure.  The first argument of make is a
-coops class; in the example above we see two classes, `<window>` and
-`<text-widget>`.  After the class come a sequence of pairs that give the
-properties of the object.  The window has just one property, `widgets`,
-while the text-widget has two, `name` and `flex`.
-
-`L` is an alias for `list`, provided by mowedline.
+Windows and widgets are instantiated with their specific procedure
+such as `window` and `widgets:text` in the example. The arguments to
+each function depend on what you're creating. In the case of `window`
+there can first be pairs of property names and values, followed by any
+widgets you would like to add.
 
 Every widget must have a unique name.  The name is how widgets are
 referred to in the command-line interface.
