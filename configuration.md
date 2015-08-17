@@ -149,10 +149,9 @@ configuration.
     processing by a format function.
 
 
-### \<clock>
+### widgets:clock
 
-Inherits from <text-widget>.  All <text-widget> properties can be used
-with a clock.
+All widgets:text properties can be used with a clock.
 
  * time-format
 
