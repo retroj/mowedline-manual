@@ -24,12 +24,12 @@ widgets.  If your .mowedline does not create a window, a default window
 with one widget will be created.  Let's get right into an example.
 
     (window
-     (widgets:text
+     (widget:text
       'name "default"
       'flex 1)))
 
 Windows and widgets are instantiated with their specific procedure
-such as `window` and `widgets:text` in the example. The arguments to
+such as `window` and `widget:text` in the example. The arguments to
 each function depend on what you're creating. In the case of `window`
 there can first be pairs of property names and values, followed by any
 widgets you would like to add.
@@ -84,7 +84,7 @@ configuration.
     Every widget must have a unique name.
 
 
-### widgets:text
+### widget:text
 
  * color
 
@@ -149,16 +149,16 @@ configuration.
     processing by a format function.
 
 
-### widgets:clock
+### widget:clock
 
-All widgets:text properties can be used with a clock.
+All widget:text properties can be used with a clock.
 
  * time-format
 
     A string giving the time->string format for the clock.
 
 
-### widgets:flags
+### widget:flags
 
 The flags widget is derived from the text widget, and serves the
 purpose of displaying a set of flags.  The flags are pre-defined via
