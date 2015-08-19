@@ -30,13 +30,14 @@ report any issues or feature requests you might have in the
 Installing Mowedline
 --------------------
 
-To install Mowedline you should use `chicken-install mowedline` as
-root.
+To install Mowedline you should use `chicken-install -s mowedline`.
+The `-s` switch tells chicken-install to use sudo to get root
+privileges.
 
 If you want to build from source you should first install all the
 dependencies with chicken-install. The dependencies can be found in
 `mowedline.meta`. When that is done go into the mowedline project
-directory and run `chicken-install` as root.
+directory and run `chicken-install -s`.
 
 Project Status
 --------------
