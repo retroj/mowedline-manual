@@ -79,6 +79,8 @@ configuration.
     another widget and give it flex 2, that makes a total flex of 3, our
     first widget get's 1/3, and the new widget gets 2/3.
 
+    A flex value of `0` or less is the same as a value of #f.
+
  * name
 
     Every widget must have a unique name.
