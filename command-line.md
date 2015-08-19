@@ -87,7 +87,8 @@ windows) created on the command line, and in your .mowedline.
 
  * -flex \<value>
 
-   Set the flex value for succeeding widgets.
+   Set the flex value for succeeding widgets. Any value of `0` or less
+   will be interpreted as `(widget-flex #f)` (making it non-flexible).
 
  * -position \<value>
 
