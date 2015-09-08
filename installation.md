@@ -56,3 +56,9 @@ The most up-to-date list of dependencies can always be found in the
  * If you didn't install, you now have mowedline and mowedline-client
    binaries that you can symlink into a $PATH directory (like ~/bin/
    or /usr/local/bin).
+
+Troubleshooting
+---------------
+
+If you run into any problems, please have a look at the
+[troubleshooting](/mowedline/troubleshooting) page.
