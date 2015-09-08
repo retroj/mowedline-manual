@@ -23,7 +23,7 @@ mowedline 0.2.9-dev.  Its basic structure is as follows:
     `text-maybe-pad-left`, a procedure provided by mowedline that adds
     extra space to the left side of any non-empty text widget.
 
-  - Declare the window.  The two widge:text and the widget:flags widgets
+  - Declare the window.  The two widget:text and the widget:flags widgets
     receive their content via mowedline-client from my window manager and
     my irc client.  The other two, widget:active-window-title and
     widget:clock are automatically updated internally by mowedline.
