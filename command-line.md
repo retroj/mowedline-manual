@@ -64,13 +64,13 @@ just before loading the .mowedline.
 
  * -q
 
-   Bypass startup file (.mowedline).
+    Bypass startup file (.mowedline).
 
  * -config <file>
 
-   Use the specified configuration file instead of the default one.
-   When this option isn't specified either `~/.mowedline` or
-   `~/.config/mowedline/init.scm` is used.
+    Use the specified configuration file instead of the default one.
+    When this option isn't specified either `~/.mowedline` or
+    `~/.config/mowedline/init.scm` is used.
 
 ### Setting Defaults
 
@@ -79,21 +79,21 @@ windows) created on the command line, and in your .mowedline.
 
  * -bg \<color>
 
-   Set the background color for succeeding widgets.
+    Set the background color for succeeding widgets.
 
  * -fg \<color>
 
-   Set the foreground color for succeeding widgets.
+    Set the foreground color for succeeding widgets.
 
  * -flex \<value>
 
-   Set the flex value for succeeding widgets. A value of `0` will make
-   it non-flexible.
+    Set the flex value for succeeding widgets. A value of `0` will make
+    it non-flexible.
 
  * -position \<value>
 
-   Set the window position for succeeding windows.  Allowed values are
-   `top` and `bottom`.
+    Set the window position for succeeding windows.  Allowed values are
+    `top` and `bottom`.
 
 
 ### Widgets and Windows
@@ -106,21 +106,21 @@ automatically created.
 
  * -text-widget \<name>
 
-   Make a text-widget with the given name.
+    Make a text-widget with the given name.
 
  * -clock
 
-   Make a clock widget.
+    Make a clock widget.
 
  * -window
 
-   Create a window containing the foregoing widgets.
+    Create a window containing the foregoing widgets.
 
-   This may seem counterintuitive at first.  The -window option comes
-   _after_ any widget options on the command line.  This is because the
-   window height is based on widget height, as well as other details of
-   widget initialization.  It's like programming in Forth!
+    This may seem counterintuitive at first.  The -window option comes
+    _after_ any widget options on the command line.  This is because the
+    window height is based on widget height, as well as other details of
+    widget initialization.  It's like programming in Forth!
 
-   Also note, if you're just making one window, you don't need to supply
-   this option, as the default window will be created with either the
-   widgets you specified or a single default widget.
+    Also note, if you're just making one window, you don't need to supply
+    this option, as the default window will be created with either the
+    widgets you specified or a single default widget.
