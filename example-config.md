@@ -1,23 +1,38 @@
 Example Config
 ==============
 
-0.2pre
-------
+0.2.9
+-----
 
-Here is my current config for mowedline 0.2pre.  Six widgets in all,
-'workspaces', 'wmflags', and 'title' are all updated by my xmonad, via
-three `mowedline -read ...` pipes.  The next two, 'email' and 'irc', are
-updated by using `mowedline update ...` in my email notification script
-and a hook in my irc client.  Last is a clock, which is updated
-internally.  The clock shows a good example of how to colorize text in
-mowedline, and the workspaces widgets shows how to buttonize text.
+Here is a slightly simplified version of retroj's dot-mowedline, for
+mowedline 0.2.9-dev.  Its basic structure is as follows:
+
+  - CHICKEN extensions can be imported with `require-extension`.  We use
+    the regex extension.
+
+  - `buttonize-workspaces` and `colorize-clock` are two formatting
+    procedures.  Buttonize-workspaces is an example of how to take a
+    pre-formatted desktop list from a window manager and reparse it to add
+    buttons and colors.  It is specific to my particular window manager
+    configuration, so I give it only as an example.  Colorize-clock on the
+    other hand can be used as-is.  It highlights the time in
+    `widget:clock`'s output.
+
+  - Set some defaults: `text-widget-font`, `text-widget-color`,
+    `text-widget-format`.  Text-widget-format is set to
+    `text-maybe-pad-left`, a procedure provided by mowedline that adds
+    extra space to the left side of any non-empty text widget.
+
+  - Declare the window.  The two widge:text and the widget:flags widgets
+    receive their content via mowedline-client from my window manager and
+    my irc client.  The other two, widget:active-window-title and
+    widget:clock are automatically updated internally by mowedline.
+
+Source:
 
     ;; -*- scheme -*-
 
-    (define (string-maybe-pad-left text)
-      (if (string-null? text)
-          text
-          (string-append " " text)))
+    (require-extension regex)
 
     (define (buttonize-workspaces text)
       (cons
@@ -57,29 +72,25 @@ mowedline, and the workspaces widgets shows how to buttonize text.
 
     (text-widget-font "DejaVu Sans Mono-10:bold")
     (text-widget-color '(.6 .6 .6 1))
-    (text-widget-format string-maybe-pad-left)
+    (text-widget-format text-maybe-pad-left)
 
-    (make <window>
-      'widgets
-      (L (make <text-widget>
-           'name "workspaces"
-           'format buttonize-workspaces)
-         (make <flags>
-           'name "wmflags"
-           'color '(.53 .53 .53 1)
-           'flags '(("tabbed" . (color "paleturquoise3" "T"))
-                    ("float" . (color "firebrick3" "f"))
-                    ("inverse" . (color "cornflowerblue" "v"))
-                    ("magnifier" . (color "forestgreen" "m")))
-           'format (lambda (markup) (append '(" (") markup '(")"))))
-         (make <text-widget>
-           'name "title"
-           'color '(.4 .4 .4 1)
-           'flex 1)
-         (make <text-widget>
-           'name "email")
-         (make <text-widget>
-           'name "irc"
-           'format (lambda (text) (string-maybe-pad-left (string-trim-both text))))
-         (make <clock>
-           'format colorize-clock)))
+    (window
+      (widget:text
+       'name "workspaces"
+       'format buttonize-workspaces)
+      (widget:flags
+       'name "wmflags"
+       'color '(.53 .53 .53 1)
+       'flags '(("tabbed" . (color "paleturquoise3" "T"))
+                ("float" . (color "firebrick3" "f"))
+                ("inverse" . (color "cornflowerblue" "v"))
+                ("magnifier" . (color "forestgreen" "m")))
+       'format (lambda (markup) (append '(" (") markup '(")"))))
+      (widget:active-window-title
+       'color '(.4 .4 .4 1)
+       'flex 1)
+      (widget:text
+       'name "irc"
+       'format (lambda (text) (text-maybe-pad-left (with-input-from-string text read))))
+      (widget:clock
+       'format colorize-clock))
