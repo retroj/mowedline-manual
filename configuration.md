@@ -77,9 +77,8 @@ configuration.
     example, we have one widget with a flex value of 1.  The total flex is
     1, and our widget receives 1/1th of the space, or 100%.  If we add
     another widget and give it flex 2, that makes a total flex of 3, our
-    first widget get's 1/3, and the new widget gets 2/3.
-
-    A flex value of `0` or less is the same as a value of #f.
+    first widget get's 1/3, and the new widget gets 2/3.  A value of
+    `0` means that the widget's width gets allocated normally.
 
  * name
 
