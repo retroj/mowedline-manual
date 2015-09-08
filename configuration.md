@@ -178,8 +178,8 @@ separated by spaces.
     An alist giving the associations between flag names and display forms.
     For example:
 
-       '(("foo" . (color "red" "f"))
-         ("bar" . (color "blue" "b")))
+        '(("foo" . (color "red" "f"))
+          ("bar" . (color "blue" "b")))
 
 Note: the `text` property of a flags widget will _always_ be a markup
 structure, never a string, so format procedures should be adjusted
