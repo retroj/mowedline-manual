@@ -6,10 +6,10 @@ This document pertains to mowedline 0.2.9-dev.
 
 Mowedline is configured by creating either a `~/.mowedline` or
 `~/.config/mowedline/init.scm` file, or passing a file along with the
-`-config` command. The documentation will sometimes refer to this file
-as your ".mowedline", and when it does, it refers to either one. Some
-configuration can also be done by passing commands to the `mowedline`
-program.
+`-config` command.  The documentation will sometimes refer to this
+file as your ".mowedline", and when it does, it refers to either one.
+Some configuration can also be done by passing commands to the
+`mowedline` program.
 
 Instead of using a static configuration format and being constrained by
 the implicit limitations thereof, a mowedline configuration is written in
@@ -29,8 +29,8 @@ with one widget will be created.  Let's get right into an example.
       'flex 1)))
 
 Windows and widgets are instantiated with their specific procedure
-such as `window` and `widget:text` in the example. The arguments to
-each function depend on what you're creating. In the case of `window`
+such as `window` and `widget:text` in the example.  The arguments to
+each function depend on what you're creating.  In the case of `window`
 there can first be pairs of property names and values, followed by any
 widgets you would like to add.
 
@@ -208,19 +208,19 @@ Window Properties
  * margin-bottom, margin-left, margin-right, margin-top
 
     How far, in pixels, from the bottom, left, right or top edge of
-    the screen the window should be placed. If not given, all default
+    the screen the window should be placed.  If not given, all default
     to 0.
 
  * background
 
-    The background color of the window. Can be either of the values
-    `inherit`, `transparent` or #f. The value `inherit` makes the
+    The background color of the window.  Can be either of the values
+    `inherit`, `transparent` or #f.  The value `inherit` makes the
     background transparent for displays without a compositor by
-    copying the root window's background. The value `transparent`
+    copying the root window's background.  The value `transparent`
     makes the background transparent for displays _with_ a compositor.
 
     Note: If you use `inherit` with a compositor, repaint doesn't work
-    right. If you use `transparent` without a compositor, you'll just
+    right.  If you use `transparent` without a compositor, you'll just
     get a black background.
 
 Setting Defaults
