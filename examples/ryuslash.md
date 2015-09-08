@@ -25,8 +25,8 @@ structure is as follows:
 
          #1	-2	:3	:4	:5	.6	.7	.8	.9
 
-   Where each number is the name of a tag. The meanings of the symbols
-   is as following:
+   Where each number is the name of a tag.  The meanings of the
+   symbols is as following:
 
    - `#` means that I'm currently using that tag
    - `-` means that I can see the tag on another monitor
@@ -38,21 +38,21 @@ structure is as follows:
    The `split-tag-list` function splits the string up at each tab
    character and splits each resulting string into a list of
    characters.  The `tag-list-display` function just maps the
-   `tag-display` function over the list. The `tag-display` function
+   `tag-display` function over the list.  The `tag-display` function
    uses `matchable` to determine the Font Awesome icon to use and
    color to show the icon in.
 
 I prefer my mowedline to be completely transparent, so I set the
-window's background to `transparent`. I run the
+window's background to `transparent`.  I run the
 [compton compositor](https://github.com/chjj/compton) to get real
-transparency in both X windows and mowedline. My IRC client updates
+transparency in both X windows and mowedline.  My IRC client updates
 the irclist widget, which uses `identity` as formatter, because I
 don't want to change anything about its formatting and my default
 formatter is `text-maybe-pad-both`, it just happens that my IRC client
-already pads its output with a single space on both sides. My taglist,
-email and keychain widgets are all updated by external scripts and the
-active-window-title and clock widgets are filled by mowedline
-automatically.
+already pads its output with a single space on both sides.  My
+taglist, email and keychain widgets are all updated by external
+scripts and the active-window-title and clock widgets are filled by
+mowedline automatically.
 
 Source:
 
