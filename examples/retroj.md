@@ -1,5 +1,5 @@
-Example Config
-==============
+retroj's Config
+===============
 
 0.2.9
 -----
