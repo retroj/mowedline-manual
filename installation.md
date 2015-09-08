@@ -7,7 +7,7 @@ Prerequisites
 
 To install chicken you must at least have the development headers for
 X11, XRender, and Xft.  On Debian, you can do this by installing the
-packages libx11-dev, libxrender-dev, and libxft-dev. You must also
+packages libx11-dev, libxrender-dev, and libxft-dev.  You must also
 have the chicken package installed.
 
 Installing mowedline
@@ -19,7 +19,7 @@ The preferred and easiest way to install chicken is to use
     chicken-install -s mowedline
 
 The `-s` switch tells chicken-install to use sudo to get root
-privileges. This is preferable to using `sudo chicken-install
+privileges.  This is preferable to using `sudo chicken-install
 mowedline`.
 
 Installing mowedline from source
