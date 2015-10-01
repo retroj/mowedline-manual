@@ -40,6 +40,15 @@ see the [installation](/mowedline/installation) page.
 Project Status
 --------------
 
+__August 3, 2015:__ Version 0.2.8 --- simplified configuration syntax;
+window margins; basic window transparency (non-compositing); mowedline can
+now be used as a library.
+
+__May 31, 2015:__ Version 0.2.7 --- font support in markup; Emacs package,
+mowedline.el, for updating mowedline from Emacs.
+
+__February 9, 2013:__ Version 0.2pre2 --- chicken-install mowedline.
+
 __January 29, 2013:__ Verion 0.2pre1 --- mowedline has been split into two
 programs, mowedline and mowedline-client, to address the problem of
 simultaneous multiple server starting,
