@@ -25,8 +25,8 @@ with one widget will be created.  Let's get right into an example.
 
     (window
      (widget:text
-      'name "default"
-      'flex 1)))
+      name: "default"
+      flex: 1)))
 
 Windows and widgets are instantiated with their specific procedure
 such as `window` and `widget:text` in the example.  The arguments to
@@ -52,6 +52,15 @@ Widget Types
 There is a small selection of built-in widget types that you can use.  We
 expect to write more widget types over time, as we the users invent new
 ideas.
+
+**Note**: As of version 2.0.0 mowedline uses keywords instead of
+symbols to name properties. The examples in the documentation use the
+`keyword:` notation, but the `#:keyword` is also possible. Changing
+the `keyword-style` parameter in your configuration to `#:prefix`
+could also allow you to use `:keyword`, but this is mutually exclusive
+with `keyword:`. According to the
+[CHICKEN documentation](http://wiki.call-cc.org/man/4/Non-standard%20read%20syntax#keyword)
+the `#:keyword` style is always accepted.
 
 ### Common properties
 
@@ -163,7 +172,7 @@ All widget:text properties can be used with a clock.
 
 The flags widget is derived from the text widget, and serves the
 purpose of displaying a set of flags.  The flags are pre-defined via
-the 'flags slot and upon update, input is parsed and interpreted to
+the flags: slot and upon update, input is parsed and interpreted to
 turn on, turn off, or clear and replace the set of currently displayed
 flags.
 
