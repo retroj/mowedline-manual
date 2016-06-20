@@ -69,7 +69,7 @@ configuration.
 
  * background-color
 
-    The background color of the widget.  See the explaination under
+    The background color of the widget.  See the explanation under
     'color' below for the allowed values of this property.  The
     default is #f, meaning it should use the window's background
     color.
