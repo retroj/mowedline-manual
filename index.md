@@ -45,6 +45,13 @@ instead of symbols to specify properties for widgets.  See
 [configuration](/mowedline/configuration) to find out how to update
 your config.
 
+__June 12 2016:__ Version 1.0.0 --- Add support for transparent window
+background.  Add active-window-title widget, to show the title of the
+currently focused window.  Consider a flex option of 0 to mean _not_
+to flex.  Look at the XDG\_CONFIG_HOME environment variable to find
+the configuration file, instead of always only looking at
+`~/.config/mowedline`.
+
 __August 3, 2015:__ Version 0.2.8 --- simplified configuration syntax;
 window margins; basic window transparency (non-compositing); mowedline can
 now be used as a library.
