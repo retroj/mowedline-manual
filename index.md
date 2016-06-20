@@ -54,9 +54,9 @@ mowedline.el, for updating mowedline from Emacs.
 
 __February 9, 2013:__ Version 0.2pre2 --- chicken-install mowedline.
 
-__January 29, 2013:__ Verion 0.2pre1 --- mowedline has been split into two
-programs, mowedline and mowedline-client, to address the problem of
-simultaneous multiple server starting,
+__January 29, 2013:__ Version 0.2pre1 --- mowedline has been split
+into two programs, mowedline and mowedline-client, to address the
+problem of simultaneous multiple server starting,
 [discussed here](/blog/2013/01/28/mowedline-three-bugs).
 
 __August 30, 2011:__ Xft, unicode, color, and more, all supported in
