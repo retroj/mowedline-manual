@@ -40,8 +40,6 @@ referred to in the command-line interface.
 
 The `flex` property is explained below.
 
-Mowedline provides a convenient alias `L` for `list`.
-
 For more complex, real-world examples, see
 [example-config](/mowedline/example-config).  For all the fascinating
 details of the configuration API, read on...
