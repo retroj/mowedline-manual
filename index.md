@@ -40,6 +40,11 @@ see the [installation](/mowedline/installation) page.
 Project Status
 --------------
 
+__June 19, 2016:__ Version 2.0.0 --- mowedline now uses keywords
+instead of symbols to specify properties for widgets.  See
+[configuration](/mowedline/configuration) to find out how to update
+your config.
+
 __August 3, 2015:__ Version 0.2.8 --- simplified configuration syntax;
 window margins; basic window transparency (non-compositing); mowedline can
 now be used as a library.
