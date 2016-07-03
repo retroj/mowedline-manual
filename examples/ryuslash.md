@@ -15,13 +15,12 @@ structure is as follows:
   is present.
 
 - The `add-fa-icon` function produces a formatting function that
-  prepends the given [Font Awesome](http://fontawesome.io/) icon to
-  the text if the text isn't empty.  The icon is just a character
-  which will be shown as an icon by the font.
+  prepends the given [Font Awesome] icon to the text if the text isn't
+  empty.  The icon is just a character which will be shown as an icon
+  by the font.
 
 - The `tag-list-formatter` function is fed information from my window
-  manager, [herbstluftwm](http://herbstluftwm.org/), which looks like
-  this:
+  manager, [herbstluftwm], which looks like this:
 
          #1	-2	:3	:4	:5	.6	.7	.8	.9
 
@@ -43,14 +42,13 @@ structure is as follows:
    color to show the icon in.
 
 I prefer my mowedline to be completely transparent, so I set the
-window's background to `transparent`.  I run the
-[compton compositor](https://github.com/chjj/compton) to get real
-transparency in both X windows and mowedline.  My IRC client updates
-the irclist widget, which uses `identity` as formatter, because I
-don't want to change anything about its formatting and my default
-formatter is `text-maybe-pad-both`, it just happens that my IRC client
-already pads its output with a single space on both sides.  My
-taglist, email and keychain widgets are all updated by external
+window's background to `transparent`.  I run the [compton compositor]
+to get real transparency in both X windows and mowedline.  My IRC
+client updates the irclist widget, which uses `identity` as formatter,
+because I don't want to change anything about its formatting and my
+default formatter is `text-maybe-pad-both`, it just happens that my
+IRC client already pads its output with a single space on both sides.
+My taglist, email and keychain widgets are all updated by external
 scripts and the active-window-title and clock widgets are filled by
 mowedline automatically.
 
@@ -119,3 +117,7 @@ Source:
                             ("Locked" . "")))
      (widget:spacer 'width 5)
      (widget:clock))
+
+[Font Awesome]: http://fontawesome.io/
+[herbstluftwm]: http://herbstluftwm.org/
+[compton compositor]: https://github.com/chjj/compton
