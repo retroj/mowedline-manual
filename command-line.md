@@ -72,6 +72,7 @@ just before loading the .mowedline.
     When this option isn't specified either `~/.mowedline` or
     `~/.config/mowedline/init.scm` is used.
 
+
 ### Setting Defaults
 
 These options set defaults.  They apply to all following widgets (or
