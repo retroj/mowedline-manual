@@ -2,11 +2,13 @@
 Contact
 =======
 
+
 Chat
 ----
 
 Mowedline has IRC channel `#mowedline` on irc.freenode.net.  Stop by and
 say hi!
+
 
 Issues
 ------
