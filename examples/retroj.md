@@ -1,11 +1,11 @@
 retroj's Config
 ===============
 
-1.0.1
+2.0.0
 -----
 
 Here is a slightly simplified version of retroj's dot-mowedline, for
-mowedline 1.0.1.  Its basic structure is as follows:
+mowedline 2.0.0.  Its basic structure is as follows:
 
   - CHICKEN extensions can be imported with `use`.  We use coops and
     regex.
