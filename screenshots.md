@@ -2,6 +2,7 @@
 Screenshots
 ===========
 
+
 0.2.7
 -----
 
@@ -11,6 +12,7 @@ Screenshots
     format procedure used for the clock.
 
 [20150531-mowedline-font-markup.png]: /screenshots/20150531-mowedline-font-markup.png
+
 
 0.2pre
 ------
@@ -26,6 +28,7 @@ Screenshots
     it does now.
 
 [20110829-mowedline.png]: /screenshots/20110829-mowedline.png
+
 
 0.1
 ---
