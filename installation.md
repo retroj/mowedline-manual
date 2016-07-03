@@ -2,6 +2,7 @@
 Mowedline Installation
 ======================
 
+
 Prerequisites
 -------------
 
@@ -9,6 +10,7 @@ To install chicken you must at least have the development headers for
 X11, XRender, and Xft.  On Debian, you can do this by installing the
 packages libx11-dev, libxrender-dev, and libxft-dev.  You must also
 have the chicken package installed.
+
 
 Installing mowedline
 --------------------
@@ -21,6 +23,7 @@ The preferred and easiest way to install chicken is to use
 The `-s` switch tells chicken-install to use sudo to get root
 privileges.  This is preferable to using `sudo chicken-install
 mowedline`.
+
 
 Installing mowedline from source
 --------------------------------
@@ -46,6 +49,7 @@ installed.  You can check with `chicken-status`.
 The most up-to-date list of dependencies can always be found in the
 `mowedline.meta` file in the source code repository.
 
+
 ### Install mowedline
 
  * change directory to where you keep source code, e.g. `cd ~/src`
@@ -56,6 +60,7 @@ The most up-to-date list of dependencies can always be found in the
  * If you didn't install, you now have mowedline and mowedline-client
    binaries that you can symlink into a $PATH directory (like ~/bin/
    or /usr/local/bin).
+
 
 Troubleshooting
 ---------------
