@@ -63,6 +63,7 @@ with `keyword:`. According to the [CHICKEN documentation] the
 
 [CHICKEN documentation]: http://wiki.call-cc.org/man/4/Non-standard%20read%20syntax#keyword
 
+
 ### Common properties
 
 These options can be used on any type of widget that appears in your
@@ -199,7 +200,6 @@ structure, never a string, so format procedures should be adjusted
 accordingly.
 
 
-
 Window Properties
 -----------------
 
@@ -235,6 +235,7 @@ Window Properties
     Note: If you use `inherit` with a compositor, repaint doesn't work
     right.  If you use `transparent` without a compositor, you'll just
     get a black background.
+
 
 Setting Defaults
 ----------------
