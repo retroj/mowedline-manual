@@ -40,9 +40,10 @@ referred to in the command-line interface.
 
 The `flex` property is explained below.
 
-For more complex, real-world examples, see
-[examples](/mowedline/examples).  For all the fascinating details of the
-configuration API, read on...
+For more complex, real-world examples, see [examples]. For all the
+fascinating details of the configuration API, read on...
+
+[examples]: /mowedline/examples
 
 
 Widget Types
@@ -57,9 +58,10 @@ symbols to name properties. The examples in the documentation use the
 `keyword:` notation, but the `#:keyword` is also possible. Changing
 the `keyword-style` parameter in your configuration to `#:prefix`
 could also allow you to use `:keyword`, but this is mutually exclusive
-with `keyword:`. According to the
-[CHICKEN documentation](http://wiki.call-cc.org/man/4/Non-standard%20read%20syntax#keyword)
-the `#:keyword` style is always accepted.
+with `keyword:`. According to the [CHICKEN documentation] the
+`#:keyword` style is always accepted.
+
+[CHICKEN documentation]: http://wiki.call-cc.org/man/4/Non-standard%20read%20syntax#keyword
 
 ### Common properties
 
@@ -108,13 +110,12 @@ configuration.
 
  * font
 
-    An Xft-style font name.  Use the program `fc-list` to see what fonts
-    are installed on your computer.  Specify size by appending a hyphen
-    followed by a number.  Specify other attributes by appending a colon
-    and an attribute specifier.  See section 1.1
-    [here](http://keithp.com/~keithp/render/Xft.tutorial) for more
-    information on how to format font names.  Mowedline's default font is
-    "mono-10:bold".
+    An Xft-style font name.  Use the program `fc-list` to see what
+    fonts are installed on your computer.  Specify size by appending a
+    hyphen followed by a number.  Specify other attributes by
+    appending a colon and an attribute specifier.  See section 1.1
+    [here] for more information on how to format font names.
+    Mowedline's default font is "mono-10:bold".
 
  * format
 
@@ -157,6 +158,8 @@ configuration.
     when you run `mowedline -update awidget 'some text'`, after possible
     processing by a format function.
 
+[here]: http://keithp.com/~keithp/render/Xft.tutorial
+
 
 ### widget:clock
 
@@ -164,9 +167,9 @@ All widget:text properties can be used with a clock.
 
  * time-format
 
-    A string giving the
-    [time->string](http://api.call-cc.org/doc/posix/time-%3Estring) format
-    for the clock.
+    A string giving the [time->string] format for the clock.
+
+[time->string]: http://api.call-cc.org/doc/posix/time-%3Estring
 
 
 ### widget:flags
