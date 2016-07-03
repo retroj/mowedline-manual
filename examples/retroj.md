@@ -1,14 +1,14 @@
 retroj's Config
 ===============
 
-0.2.9
+1.0.1
 -----
 
 Here is a slightly simplified version of retroj's dot-mowedline, for
-mowedline 0.2.9-dev.  Its basic structure is as follows:
+mowedline 1.0.1.  Its basic structure is as follows:
 
-  - CHICKEN extensions can be imported with `require-extension`.  We use
-    the regex extension.
+  - CHICKEN extensions can be imported with `use`.  We use coops and
+    regex.
 
   - `buttonize-workspaces` and `colorize-clock` are two formatting
     procedures.  Buttonize-workspaces is an example of how to take a
@@ -32,7 +32,7 @@ Source:
 
     ;; -*- scheme -*-
 
-    (require-extension regex)
+    (use coops regex)
 
     (define (buttonize-workspaces text)
       (cons
@@ -47,10 +47,10 @@ Source:
               token)
              ((string-prefix? "!" token) ;; urgency notification
               (let ((ws (string-drop token 1)))
-                `(button (lambda () (switch-to-desktop ,ws))
+                `(button ,(lambda _ (switch-to-desktop ws))
                          (color (1 0 0 1) ,ws))))
              (else
-              `(button (lambda () (switch-to-desktop ,token))
+              `(button ,(lambda _ (switch-to-desktop token))
                        ,token)))
             markup)))
         '()
@@ -65,32 +65,47 @@ Source:
                      (submatch (* any)))
                  text)))
          (cond
-          (m (set! (third m) `(color (.73 .73 .86 1) ,(third m)))
+          (m (set! (third m)
+                   `(color (.73 .73 .86 1)
+                           (font "Coffee Script-11" " " ,(third m))))
              (cdr m))
           (else text)))
        " "))
 
-    (text-widget-font "DejaVu Sans Mono-10:bold")
+    (window-background 'transparent)
+
+    (text-widget-font "Inconsolata-11:bold")
     (text-widget-color '(.6 .6 .6 1))
     (text-widget-format text-maybe-pad-left)
 
+    (widget-background-color #f)
+
     (window
-      (widget:text
-       'name "workspaces"
-       'format buttonize-workspaces)
-      (widget:flags
-       'name "wmflags"
-       'color '(.53 .53 .53 1)
-       'flags '(("tabbed" . (color "paleturquoise3" "T"))
-                ("float" . (color "firebrick3" "f"))
-                ("inverse" . (color "cornflowerblue" "v"))
-                ("magnifier" . (color "forestgreen" "m")))
-       'format (lambda (markup) (append '(" (") markup '(")"))))
-      (widget:active-window-title
-       'color '(.4 .4 .4 1)
-       'flex 1)
-      (widget:text
-       'name "irc"
-       'format (lambda (text) (text-maybe-pad-left (with-input-from-string text read))))
-      (widget:clock
-       'format colorize-clock))
+     (widget:text
+      name: "workspaces"
+      format: buttonize-workspaces)
+     (widget:flags
+      name: "wmflags"
+      color: '(.53 .53 .53 1)
+      flags: '(("tabbed" . (color "paleturquoise3" "T"))
+               ("float" . (color "firebrick3" "f"))
+               ("inverse" . (color "cornflowerblue" "v"))
+               ("magnifier" . (color "forestgreen" "m")))
+      format: (lambda (markup) (append '(" (") markup '(")"))))
+     (widget:spacer)
+     (widget:active-window-title
+      color: '(.4 .4 .4 1)
+      flex: 1)
+     (widget:map
+      name: "email"
+      format-pair: (lambda (k v)
+                     (if v
+                         (string-append (substring (->string k) 0 1)
+                                        (->string v))
+                         #f))
+      format: (lambda (markup) (list "[" markup "]")))
+     (widget:text
+      name: "irc"
+      format: (lambda (text) (text-maybe-pad-left (with-input-from-string text read))))
+     (widget:clock
+      format: colorize-clock))
