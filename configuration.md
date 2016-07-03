@@ -2,14 +2,15 @@
 Configuration
 =============
 
-This document pertains to mowedline 0.2.9-dev.
+This document pertains to mowedline 2.0.0.
 
 Mowedline is configured by creating either a `~/.mowedline` or
-`~/.config/mowedline/init.scm` file, or passing a file along with the
-`-config` command.  The documentation will sometimes refer to this
-file as your ".mowedline", and when it does, it refers to either one.
-Some configuration can also be done by passing commands to the
-`mowedline` program.
+`$XDG_CONFIG_HOME/mowedline/init.scm` file, or passing a file along
+with the `-config` command.  If `XDG_CONFIG_HOME` is not specified in
+the environment, the value `~/.config` will be used.  The
+documentation will sometimes refer to this file as your ".mowedline",
+and when it does, it refers to either one.  Some configuration can
+also be done by passing commands to the `mowedline` program.
 
 Instead of using a static configuration format and being constrained by
 the implicit limitations thereof, a mowedline configuration is written in
@@ -25,8 +26,8 @@ with one widget will be created.  Let's get right into an example.
 
     (window
      (widget:text
-      'name "default"
-      'flex 1)))
+      name: "default"
+      flex: 1)))
 
 Windows and widgets are instantiated with their specific procedure
 such as `window` and `widget:text` in the example.  The arguments to
@@ -53,6 +54,15 @@ There is a small selection of built-in widget types that you can use.  We
 expect to write more widget types over time, as we the users invent new
 ideas.
 
+**Note**: As of version 2.0.0 mowedline uses keywords instead of
+symbols to name properties. The examples in the documentation use the
+`keyword:` notation, but the `#:keyword` is also possible. Changing
+the `keyword-style` parameter in your configuration to `#:prefix`
+could also allow you to use `:keyword`, but this is mutually exclusive
+with `keyword:`. According to the
+[CHICKEN documentation](http://wiki.call-cc.org/man/4/Non-standard%20read%20syntax#keyword)
+the `#:keyword` style is always accepted.
+
 ### Common properties
 
 These options can be used on any type of widget that appears in your
@@ -60,7 +70,7 @@ configuration.
 
  * background-color
 
-    The background color of the widget.  See the explaination under
+    The background color of the widget.  See the explanation under
     'color' below for the allowed values of this property.  The
     default is #f, meaning it should use the window's background
     color.
@@ -163,7 +173,7 @@ All widget:text properties can be used with a clock.
 
 The flags widget is derived from the text widget, and serves the
 purpose of displaying a set of flags.  The flags are pre-defined via
-the 'flags slot and upon update, input is parsed and interpreted to
+the flags: slot and upon update, input is parsed and interpreted to
 turn on, turn off, or clear and replace the set of currently displayed
 flags.
 
