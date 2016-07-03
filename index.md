@@ -13,6 +13,7 @@ to it to update its contents.
 [Chicken Scheme]: http://www.call-cc.org/
 [dzen2]: https://github.com/robm/dzen
 
+
 Obtaining Mowedline
 -------------------
 
@@ -22,6 +23,7 @@ report any issues or feature requests you might have in the
 
 [my git repository]: https://github.com/retroj/mowedline/
 [issue tracker]: https://github.com/retroj/mowedline/issues
+
 
 Installing Mowedline
 --------------------
@@ -34,6 +36,7 @@ For more detailed instructions and instructions to build from source
 see the [installation] page.
 
 [installation]: /mowedline/installation
+
 
 Project Status
 --------------
@@ -74,6 +77,7 @@ feature set to be considered useful, though much work remains to be done.
 
 [configuration]: /mowedline/configuration
 [discussed here]: /blog/2013/01/28/mowedline-three-bugs
+
 
 License
 -------
