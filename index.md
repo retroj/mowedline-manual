@@ -11,13 +11,6 @@ of those windows.  A mowedline window is divided into widgets.  Each
 widget has a unique name, by which the client can refer to it to update
 its contents.
 
-The runtime configuration is written in scheme.  It can either be
-`~/.mowedline`, `~/.config/mowedline/init.scm`, or passed along with
-the `-config` command.  This file is loaded when the daemon starts,
-and sets variables that affect global settings or creates windows.  If
-the config script does not create any windows (or if there is no
-config script) then the default window is created.
-
 
 Obtaining Mowedline
 -------------------

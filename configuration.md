@@ -40,11 +40,9 @@ referred to in the command-line interface.
 
 The `flex` property is explained below.
 
-Mowedline provides a convenient alias `L` for `list`.
-
 For more complex, real-world examples, see
-[example-config](/mowedline/example-config).  For all the fascinating
-details of the configuration API, read on...
+[examples](/mowedline/examples).  For all the fascinating details of the
+configuration API, read on...
 
 
 Widget Types
@@ -166,7 +164,9 @@ All widget:text properties can be used with a clock.
 
  * time-format
 
-    A string giving the time->string format for the clock.
+    A string giving the
+    [time->string](http://api.call-cc.org/doc/posix/time-%3Estring) format
+    for the clock.
 
 
 ### widget:flags
