@@ -61,4 +61,6 @@ Troubleshooting
 ---------------
 
 If you run into any problems, please have a look at the
-[troubleshooting](/mowedline/troubleshooting) page.
+[troubleshooting] page.
+
+[troubleshooting]: /mowedline/troubleshooting
